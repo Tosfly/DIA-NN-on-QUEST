@@ -70,16 +70,16 @@ Phos_B5.raw  Phos_B6.raw  Phos_B7.raw  Phos_B8.raw
 ### Scripts
 
 ```text
-Lib_Gen_Mouse_Phos_DIA-NN2.5.1_auto_corrected.sh
-DIA_MS_Phos_search_DIA-NN2.5.1_auto_corrected.sh
+Lib_Gen_Mouse_Phos.sh
+DIA_MS_Phos_search.sh
 ```
 
 ## Recommended directory layout
 
 ```text
 /projects/p20710/ywd617/Human_Tau_NLF_PS1_DIA_Phos/
-├── Lib_Gen_Mouse_Phos_DIA-NN2.5.1_auto_corrected.sh
-├── DIA_MS_Phos_search_DIA-NN2.5.1_auto_corrected.sh
+├── Lib_Gen_Mouse_Phos.sh
+├── DIA_MS_Phos_search.sh
 ├── Mouse_UP000000589_2025_10_16_AD_custom_NLF_PSEN1dE9_humanMAPT.fasta
 ├── camprotR_240512_cRAP_20190401_full_tags.fasta
 ├── Phos_A1.raw
@@ -91,8 +91,8 @@ Make the scripts executable:
 
 ```bash
 chmod +x \
-  Lib_Gen_Mouse_Phos_DIA-NN2.5.1_auto_corrected.sh \
-  DIA_MS_Phos_search_DIA-NN2.5.1_auto_corrected.sh
+  Lib_Gen_Mouse_Phos.sh \
+  DIA_MS_Phos_search.sh
 ```
 
 ## Step 0: preflight checks
@@ -100,8 +100,8 @@ chmod +x \
 ```bash
 cd /projects/p20710/ywd617/Human_Tau_NLF_PS1_DIA_Phos
 
-bash -n Lib_Gen_Mouse_Phos_DIA-NN2.5.1_auto_corrected.sh
-bash -n DIA_MS_Phos_search_DIA-NN2.5.1_auto_corrected.sh
+bash -n Lib_Gen_Mouse.sh
+bash -n DIA_MS_Phos.sh
 
 module purge
 module load diann/2.5.1-linux
@@ -122,7 +122,7 @@ The `ls` command must return all 18 biological input files as non-empty files.
 From the project directory:
 
 ```bash
-sbatch Lib_Gen_Mouse_Phos_DIA-NN2.5.1_auto_corrected.sh
+sbatch Lib_Gen_Mouse.sh
 ```
 
 Equivalent explicit submission:
@@ -131,7 +131,7 @@ Equivalent explicit submission:
 WORKDIR=/projects/p20710/ywd617/Human_Tau_NLF_PS1_DIA_Phos \
 MIN_PR_MZ=400 \
 MAX_PR_MZ=1100 \
-sbatch Lib_Gen_Mouse_Phos_DIA-NN2.5.1_auto_corrected.sh
+sbatch Lib_Gen_Mouse.sh
 ```
 
 ### Expected default library
@@ -158,7 +158,7 @@ Do not submit the search until the predicted library exists and is non-empty.
 ## Step 2: search the 16 DIA RAW files
 
 ```bash
-sbatch DIA_MS_Phos_search_DIA-NN2.5.1_auto_corrected.sh
+sbatch DIA_MS_Phos_search.sh
 ```
 
 Equivalent explicit submission:
@@ -212,10 +212,10 @@ For a different DIA isolation range, pass the same range to both jobs. Example:
 
 ```bash
 MIN_PR_MZ=350 MAX_PR_MZ=1650 \
-sbatch Lib_Gen_Mouse_Phos_DIA-NN2.5.1_auto_corrected.sh
+sbatch Lib_Gen_Mouse_Phos.sh
 
 MIN_PR_MZ=350 MAX_PR_MZ=1650 \
-sbatch DIA_MS_Phos_search_DIA-NN2.5.1_auto_corrected.sh
+sbatch DIA_MS_Phos_search.sh
 ```
 
 Do not generate a `400_1100` library and submit a search configured for `350_1650`; the search will correctly stop because the expected library filename will not exist.
