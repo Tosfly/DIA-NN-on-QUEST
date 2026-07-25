@@ -29,7 +29,7 @@ The scripts and documentation are now internally consistent:
   ```
 
 - Both scripts use the same default precursor range: **400–1100 m/z**.
-- Both scripts use the same default precursor-charge range: **2–3**.
+- Both scripts use the same default precursor-charge range: **2–4**.
 - Both scripts use the same digestion and phosphosite search space: one missed cleavage, up to three variable phosphorylation sites, and phosphorylation on S/T/Y.
 - The library basename generated in Step 1 exactly matches the library basename consumed in Step 2.
 - The search-script submission example now names the actual corrected search script.
