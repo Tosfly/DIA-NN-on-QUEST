@@ -4,9 +4,9 @@ This workflow generates a predicted phosphopeptide spectral library and then sea
 
 ## Final scripts
 
-1. `Lib_Gen_Mouse_Phos_DIA-NN2.5.1_auto_corrected.sh`  
+1. `Lib_Gen_Mouse_Phos.sh`  
    Generates the predicted library from the project-specific target FASTA plus the cRAP contaminant FASTA.
-2. `DIA_MS_Phos_search_DIA-NN2.5.1_auto_corrected.sh`  
+2. `DIA_MS_Phos_search.sh`  
    Searches `Phos_A1.raw`–`Phos_A8.raw` and `Phos_B1.raw`–`Phos_B8.raw` against that predicted library.
 
 Both scripts load:
