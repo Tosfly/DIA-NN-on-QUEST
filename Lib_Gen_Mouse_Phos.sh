@@ -51,7 +51,7 @@ MAX_FR_MZ="${MAX_FR_MZ:-1450}"
 # DIA-NN's current phosphoproteomics guidance recommends precursor charges 2-3,
 # no more than three variable phosphorylation sites, and one missed cleavage.
 MIN_PR_CHARGE="${MIN_PR_CHARGE:-2}"
-MAX_PR_CHARGE="${MAX_PR_CHARGE:-3}"
+MAX_PR_CHARGE="${MAX_PR_CHARGE:-4}"
 MIN_PEP_LEN="${MIN_PEP_LEN:-5}"
 MAX_PEP_LEN="${MAX_PEP_LEN:-30}"
 MAX_VAR_MODS="${MAX_VAR_MODS:-3}"
